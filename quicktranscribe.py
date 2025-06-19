@@ -14,7 +14,7 @@ import numpy as np # Whisper works well with numpy arrays
 
 # --- Configuration ---
 MODEL_NAME = "tiny.en"
-OUTPUT_DIR = "/Users/josh/Downloads" # Fixed output directory
+OUTPUT_DIR = os.path.expanduser("~/Downloads")  # or use argparse to make it configurable
 CHUNK_DURATION_SECONDS = 60 # Process audio in 60-second chunks
 # Use most available cores, leaving one for system responsiveness if desired
 NUM_WORKERS = max(1, os.cpu_count() - 1 if os.cpu_count() > 1 else 1)
